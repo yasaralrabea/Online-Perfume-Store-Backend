@@ -1,0 +1,123 @@
+
+body {
+    background-color: #ffffff;
+    background-image: url('/images/perfume-icons-bg.png');
+    background-size: contain;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    color: #b71c1c;
+    margin: 0;
+    padding: 0;
+}
+
+.header-box {
+    background-color: #b71c1c;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(183, 28, 28, 0.3);
+    display: inline-block;
+    margin: 40px auto 20px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.95);
+    max-width: 400px;
+    margin: 20px auto 50px;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(183, 28, 28, 0.15);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border: 2px solid #b71c1c;
+    border-radius: 8px;
+    padding: 12px 15px;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 transparent;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff5252;
+    outline: none;
+    box-shadow: 0 0 12px #ffdddd;
+    background-color: #fff;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #b71c1c;
+}
+
+button[type="submit"], .primary-button {
+    background-color: #b71c1c;
+    color: white;
+    font-weight: bold;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff5252;
+}
+
+.register-button {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #444;
+}
+
+a {
+    color: #b71c1c;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+a:hover {
+    color: #ff5252;
+}
+
+.input-error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
