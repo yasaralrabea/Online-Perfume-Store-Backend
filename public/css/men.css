@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fa314a;
+}
+
+.topbar {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-btn {
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fa314a;
+    transition: transform 0.2s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.2);
+}
+
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-right {
+    flex-direction: row-reverse;
+}
+
+.topbar-right a,
+.topbar-right form {
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+}
+
+.topbar-right a:last-child {
+    margin-left: 0;
+}
+
+.topbar-right a img {
+    filter: drop-shadow(0 0 2px rgba(250, 49, 74, 0.7));
+    transition: filter 0.3s ease;
+}
+
+.topbar-right a:hover img {
+    filter: drop-shadow(0 0 6px #fa314a);
+}
+
+.topbar-right .home-icon {
+    font-size: 0.9rem;      
+    padding: 6px 10px;   
+    display: flex;
+    align-items: center;
+    gap: 6px;               
+}
+
+.topbar-right .home-icon svg {
+    width: 18px;           
+    height: 18px;
+}
+
+
+.topbar-right form button[type="submit"] {
+    background-color: #fa314a;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+}
+
+.topbar-right form button[type="submit"]:hover,
+.topbar-right form button[type="submit"]:focus {
+    background-color: #d72a3a;
+    color: #fff;
+    outline: none;
+    box-shadow: none; 
+}
+
+#overlay {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1050;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -3px 0 12px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    transition: right 0.35s ease;
+    z-index: 1100;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #fa314a;
+    font-weight: 700;
+    border-bottom: 2px solid #fa314a;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 18px;
+}
+
+.sidebar ul li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #fa314a;
+    color: #fff;
+}
+
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 30px auto 50px;
+    padding: 0 15px;
+}
+
+h1, .bestsellers h1 {
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+    color: #fa314a;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1.2px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+    width: calc(33.33% - 16px);
+    padding: 20px 18px 30px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover,
+.product-card:focus-within {
+    box-shadow: 0 8px 20px rgb(250 49 74 / 0.25);
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: #222;
+    font-weight: 700;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.price {
+    font-weight: 700;
+    color: #fa314a;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+
+.btn,
+.btn-view-product {
+    background-color: #fa314a;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgb(250 49 74 / 0.3);
+    user-select: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus,
+.btn-view-product:hover,
+.btn-view-product:focus {
+    background-color: #d72a3a;
+    box-shadow: 0 6px 14px rgb(215 42 58 / 0.5);
+}
+
+/* استجابة الشاشات */
+@media (max-width: 900px) {
+    .product-card {
+        width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-card {
+        width: 100%;
+    }
+    .topbar-right a,
+    .topbar-right form {
+        margin-left: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* الفوتر */
+footer {
+    background-color: #222;
+    color: #eee;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-about {
+    max-width: 400px;
+    flex: 1 1 300px;
+    line-height: 1.5;
+}
+
+.footer-about h2 {
+    color: #fa314a;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.footer-logo {
+    flex: 0 1 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo img {
+    filter: drop-shadow(0 0 4px #fa314a);
+}
+
+.footer-logo h3 {
+    font-weight: 700;
+    color: #fa314a;
+    font-size: 1.3rem;
+    letter-spacing: 1.1px;
+}
+
+.footer-rights {
+    flex-basis: 100%;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #bbb;
+}
