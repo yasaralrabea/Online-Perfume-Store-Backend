@@ -157,81 +157,91 @@
         }
 
         .products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .product-card {
-            width: calc(25% - 12px); /* 4 بطاقات في الصف */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 8px;
-            box-sizing: border-box;
-            text-align: center;
-            cursor: pointer;
-            transition: box-shadow 0.3s, transform 0.2s;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transform: translateY(-3px);
-        }
-
-       .product-card img {
-    width: 100%;
-    height: 160px;       /* الطول ثابت */
-    object-fit: contain; /* الصورة تظل كاملة */
-    background-color: #fff; /* خلفية ورا الصورة */
-    border-radius: 5px;
-    padding: 5px;        /* مسافة صغيرة حول الصورة */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
 }
 
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 370px; /* ارتفاع متوازن */
+    box-sizing: border-box;
+}
 
-        .product-card h3 {
-            margin: 8px 0 4px;
-            font-size: 14px;
-        }
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
 
-        .product-card p {
-            font-size: 12px;
-            color: #666;
-            height: 36px;
-            overflow: hidden;
-        }
+.product-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
 
-        .product-card .price {
-            font-weight: bold;
-            font-size: 13px;
-            color: #fa314a;
-        }
+.product-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
 
-        /* زر الإضافة للسلة بشكل جديد */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 6px;
-            padding: 6px 12px;
-            background: linear-gradient(135deg, #fa314a, #ff5c7a);
-            color: #fff;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 13px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+.product-card p {
+    font-size: 13px;
+    color: #666;
+    margin: 5px 0;
+    height: 38px;
+    overflow: hidden;
+}
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(250, 49, 74, 0.3);
-        }
+.product-card .price {
+    font-weight: bold;
+    font-size: 15px;
+    color: #fa314a;
+    margin: 8px 0;
+}
 
-        .btn svg {
-            width: 16px;
-            height: 16px;
-        }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, #fa314a, #ff5c7a);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(250, 49, 74, 0.3);
+}
+
+.btn svg {
+    width: 16px;
+    height: 16px;
+}
+
 
         /* ======= الفوتر ======= */
         footer {

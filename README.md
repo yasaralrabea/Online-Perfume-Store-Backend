@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -59,3 +60,58 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+Online Perfume Store - Backend
+
+Description
+This is the backend for an online perfume store, implementing the core functionalities of a modern e-commerce platform. It provides a complete system for both users and administrators, including:
+
+User authentication (registration, login, profile management)
+
+Shopping cart management
+
+Order tracking and status updates
+
+Full admin control panel (manage products, users, and orders)
+
+Product reviews and ratings system
+
+Features
+User Features
+
+Register and login
+
+Browse products by category or gender
+
+Add products to the cart
+
+Place and confirm orders
+
+View order history
+
+Submit product reviews and ratings
+
+Admin Features
+
+Add, update, and delete products
+
+View all users and manage roles (promote/demote)
+
+View, update, and cancel orders
+
+Respond to user questions
+
+Access statistics (top-selling products, user count, etc.)
+
+Technologies
+
+Framework: Laravel 10
+
+Database: MySQL
+
+Authentication: Laravel Auth
+
+Notifications: Laravel Notifications system
+
+Architecture: Repository-Service pattern for clean separation of concerns
+>>>>>>> 975b84026961ce5a055f966955bce2500c35ea57
